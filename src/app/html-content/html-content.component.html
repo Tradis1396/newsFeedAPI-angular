@@ -1,0 +1,134 @@
+<div
+  class="card-deck my-3 "
+  *ngFor="let newsfeed of newsfeedContent; let idx = index"
+>
+  <div
+    class="card card-body bg-light border-left-primary"
+    *ngIf="idx % 2 == 0; else contentOdd"
+  >
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card-title">
+          <h4 class="text-wrap">
+            <a
+              href="{{ newsfeed.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none font-weight-bolder text-dark"
+              >{{ newsfeed.title }}</a
+            >
+          </h4>
+          <h6>
+            <span class="font-weight-bold">News by : </span
+            >{{ newsfeed.author }}
+          </h6>
+        </div>
+
+        <div class="card-text ">
+          <p class="text-wrap">
+            {{ newsfeed.description }}
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <a href="{{ newsfeed.url }}" target="_blank" rel="noopener noreferrer">
+          <figure class="figure">
+            <img
+              src="{{ newsfeed.urlToImage }}"
+              class="figure-img img-fluid rounded"
+              alt="{{ newsfeed.title }}"
+            />
+            <figcaption class="figure-caption">
+              {{ newsfeed.title }}.
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+      <div class="col-lg-12 card-footer bg-transparent border-light">
+        <small>
+          read more at
+          <span>
+            <a
+              href="{{ newsfeed.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-decoration-none text-info "
+              >{{ newsfeed.source.name }}
+            </a>
+          </span>
+        </small>
+        <p class="card-text">
+          <small class="text-muted">{{ newsfeed.publishedAt }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <ng-template #contentOdd>
+    <div class="">
+      <div class="card my-4 card-body bg-light">
+        <div class="row">
+          <div class="col-lg-4">
+            <a
+              href="{{ newsfeed.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <figure class="figure">
+                <img
+                  src="{{ newsfeed.urlToImage }}"
+                  class="figure-img img-fluid rounded"
+                  alt="{{ newsfeed.title }}"
+                />
+                <figcaption class="figure-caption">
+                  {{ newsfeed.title }}.
+                </figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-8">
+            <div class="card-title">
+              <h4 class="text-wrap">
+                <a
+                  href="{{ newsfeed.url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none font-weight-bolder text-dark"
+                  >{{ newsfeed.title }}</a
+                >
+              </h4>
+              <h6>
+                <span class="font-weight-bold">News by : </span
+                >{{ newsfeed.author }}
+              </h6>
+            </div>
+
+            <div class="card-text c-body ">
+              <p class="text-wrap">
+                {{ newsfeed.description }}
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-12 card-footer bg-transparent border-light text-right"
+          >
+            <small>
+              read more at
+              <span>
+                <a
+                  href="{{ newsfeed.url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none text-info "
+                  >{{ newsfeed.source.name }}
+                </a>
+              </span>
+            </small>
+            <p class="card-text">
+              <small class="text-muted">{{ newsfeed.publishedAt }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
