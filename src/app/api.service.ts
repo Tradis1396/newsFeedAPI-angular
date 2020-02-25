@@ -6,15 +6,17 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ApiService {
   apiKey: string = "b6e99529b71c4054bf3df59d1d4dfc11";
+
   constructor(private http: HttpClient) {}
+
   getAppleNews() {
     return this.http.get(
-      `http://newsapi.org/v2/everything?q=apple&from=2020-02-18&to=2020-02-18&sortBy=popularity&apiKey=${this.apiKey}`
+      `http://newsapi.org/v2/everything?q=apple&from=2020-02-25&sortBy=popularity&apiKey=${this.apiKey}`
     );
   }
   getBitcoinNews() {
     return this.http.get(
-      `http://newsapi.org/v2/everything?q=bitcoin&from=2020-01-20&sortBy=publishedAt&apiKey=${this.apiKey}`
+      `http://newsapi.org/v2/everything?q=bitcoin&from=2020-02-25&sortBy=publishedAt&apiKey=${this.apiKey}`
     );
   }
   getHeadlinesNews() {
