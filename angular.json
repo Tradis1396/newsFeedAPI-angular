@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "angular-newsfeed"
+  "defaultProject": "angular-newsfeed",
+  "cli": {
+    "analytics": false
+  }
 }
