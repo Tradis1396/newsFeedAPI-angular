@@ -6,9 +6,9 @@ const app = express();
 
 
 // Serve only the static files form the dist directory
-app.use(express.static(path.join(__dirname + '/dist/angularNewsfeed')));
+app.use(express.static(path.join(__dirname + '/dist/angular-newsfeed')));
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/angularNewsfeed/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/angular-newsfeed/index.html'));
 });
 // console.log(path.join(__dirname + "/src/index.html"));
 
